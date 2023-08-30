@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gym Membership Form</title>
+    <style>
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        /*background-image: url('img2.jpg'); /* Provide the correct path here */
+        /*background-size: cover; /* This ensures the image covers the entire background */
+        /*background-repeat: no-repeat; /* Prevent the image from repeating */
+        /*background-position: center; /* Center the image */
+        background-color: lightgray;
+    }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #000407;
+            color: #4477CE;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #4477CE;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #000407;
+            color: #4477CE;
+            border:3px solid #4477CE;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h1>Gym Membership Form</h1>
+   <form action="process-membership.php" method="post">
+        <table>
+            <tr>
+                <td><label for="first_name">First Name:</label></td>
+                <td><input type="text" id="first_name" name="first_name"></td>
+            </tr>
+            <tr>
+                <td><label for="last_name">Last Name:</label></td>
+                <td><input type="text" id="last_name" name="last_name"></td>
+            </tr>
+            <tr>
+                <td><label for="email_address">Email Address:</label></td>
+                <td><input type="email" id="email" name="email_address" required></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <select id="gender" name="gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="birthdate">Birthdate:</label></td>
+                <td><input type="date" id="birthdate" name="birthdate"></td>
+            </tr>
+            <tr>
+                <td><label for="height_cm">Height (cm):</label></td>
+                <td><input type="number" id="height" name="height_cm" step="0.01"></td>
+            </tr>
+            <tr>
+                <td><label for="weight_kg">Weight (kg):</label></td>
+                <td><input type="number" id="weight" name="weight_kg" step="0.01"></td>
+            </tr>
+            <tr>
+                <td><label for="membership_type">Membership Type:</label></td>
+                <td>
+                    <select id="membership_type" name="membership_type">
+                        <option value="Basic">Basic</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="submit" value="Submit" onclick="onClickEvent()">
+               </td>
+            </tr>
+        </table>
+        <p>Already have an account? <a href="login.html">Log in</a></p>
+
+  </form>
+   <script>
+        function onClickEvent() {
+            alert("Welcome! Now you can go to the login page.");
+            redirectToLogin();
+        }
+        function redirectToLogin() {
+            window.location.href = "http://localhost:8080/login.html";
+        }
+    </script>
+</body>
+</html>
